@@ -7,11 +7,12 @@ class Home extends React.Component {
         counterText: 'Current Counter: Loading...'
     }
 
+    //Calls the counter api endpoint and updates the Counter on the view with the latest value
     getCounter = () => {
         const counterUrl = 'https://master-button.herokuapp.com/counter';
     
         const requestMetadata = {
-            method: 'POST',
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -28,6 +29,8 @@ class Home extends React.Component {
             });
     };
     
+    //Handles the click on the Main button which increments the value by POSTing to the api,
+    //then updates the value after the server responds with the latest value
     clickHandler = () => {
         const counterUrl = 'https://master-button.herokuapp.com/counter';
 
@@ -52,7 +55,8 @@ class Home extends React.Component {
     //used to run code/functions after rendering
     componentDidMount() {
         this.getCounter();
-    }
+    };
+
     render () {
         return (
             <div>

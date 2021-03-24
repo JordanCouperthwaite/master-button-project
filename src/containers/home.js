@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import Counter from '../components/counter/counter.js'
+import Counter from '../components/counter/Counter.js'
 
 class Home extends React.Component {
     state = {
@@ -33,7 +33,6 @@ class Home extends React.Component {
     //then updates the value after the server responds with the latest value
     clickHandler = () => {
         const counterUrl = 'https://master-button.herokuapp.com/counter';
-
         const requestMetadata = {
             method: 'POST',
             headers: {

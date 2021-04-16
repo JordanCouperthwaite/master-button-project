@@ -29,13 +29,16 @@ class Home extends React.Component {
             .then(responseData => {
                 console.log(responseData);
                 const oldState = { ...this.state };
+                //TODO: Add validation for server being down/not responding
+                //Validation checking if respondData.data is null and if so displays the message returned by the API
                 if(responseData.data == null)
                 {
                     oldState.counterText = 'Current Counter: ' + responseData.message;
                     this.setState(oldState);
                     return;
                 }
-
+                
+                //updates the state of the counterText
                 oldState.counterText = 'Current Counter: ' + responseData.data;
                 this.setState(oldState);
                 }

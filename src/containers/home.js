@@ -7,6 +7,11 @@ class Home extends React.Component {
         counterText: 'Current Counter: Loading...'
     }
 
+    //used to run code/functions after rendering
+    componentDidMount() {
+        this.getCounter();
+    };
+
     //Calls the counter api endpoint and updates the Counter on the view with the latest value
     getCounter = () => {
         const counterUrl = 'https://master-button.herokuapp.com/counter';
@@ -44,17 +49,11 @@ class Home extends React.Component {
         fetch(counterUrl, requestMetadata)
             .then(response => response.json())
             .then(responseData => {
-                console.log(responseData);
                 const oldState = { ...this.state };
                 oldState.counterText = 'Current Counter: ' + responseData.data;
                 this.setState(oldState);
             });
     }
-
-    //used to run code/functions after rendering
-    componentDidMount() {
-        this.getCounter();
-    };
 
     render () {
         return (

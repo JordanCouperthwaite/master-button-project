@@ -1,8 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './containers/Home.js'
+import 'bootstrap/dist/css/bootstrap.min.css';
  
 function App() {
+
   return (
+<<<<<<< HEAD
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -18,6 +21,10 @@ function App() {
           Learn React and buttons!
         </a>
       </header>
+=======
+    <div>
+      < Home/>
+>>>>>>> Feature/AddbuttonAndIncrement
     </div>
   );
 }

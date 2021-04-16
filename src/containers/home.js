@@ -29,9 +29,17 @@ class Home extends React.Component {
             .then(responseData => {
                 console.log(responseData);
                 const oldState = { ...this.state };
+                if(responseData.data == null)
+                {
+                    oldState.counterText = 'Current Counter: ' + responseData.message;
+                    this.setState(oldState);
+                    return;
+                }
+
                 oldState.counterText = 'Current Counter: ' + responseData.data;
                 this.setState(oldState);
-            });
+                }
+            );
     };
     
     //Handles the click on the Main button which increments the value by POSTing to the api,

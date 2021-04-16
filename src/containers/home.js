@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import Counter from '../components/counter/Counter.js'
+import Counter from '../components/counter/counter.js'
 
 class Home extends React.Component {
     state = {
